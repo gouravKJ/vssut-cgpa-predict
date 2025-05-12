@@ -1,0 +1,768 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VSSUT CGPA Predictor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="theme-toggle" onclick="toggleTheme()">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <div class="header">
+    <h1>VSSUT CGPA PREDICTOR</h1>
+
+  </div>
+
+  <div class="toggle-container">
+    <div class="toggle-switch" id="toggle-switch">
+      <button onclick="showSemester('even')" class="active" id="even-btn">Even Sem</button>
+      <button onclick="showSemester('odd')" id="odd-btn">Odd Sem</button>
+      <div class="slider"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    
+    <div class="section" id="even-section">
+      <div class="card">
+        <h2><i class="fas fa-book"></i> Theory Subjects</h2>
+
+        <div class="subject-block">
+          <div class="subject-header">
+            <span class="subject-name">Mathematics II</span>
+            <span class="credit-badge">3 Credits</span>
+          </div>
+          <div class="input-group">
+            <div class="input-wrapper">
+              <label>Mid Sem (30)</label>
+              <input type="number" min="0" max="30" id="even-math-mid" oninput="calculateSubjectGrade('even', 'math')">
+            </div>
+            <div class="input-wrapper">
+              <label>End Sem (50)</label>
+              <input type="number" min="0" max="50" id="even-math-end" oninput="calculateSubjectGrade('even', 'math')">
+            </div>
+            <div class="input-wrapper">
+              <label>INTERNAL (20)</label>
+              <input type="number" min="0" max="20" id="even-math-ta" oninput="calculateSubjectGrade('even', 'math')">
+            </div>
+          </div>
+          <div class="grade-display" id="even-math-grade">Grade: <span class="grade-value">-</span></div>
+        </div>
+
+        <div class="subject-block">
+          <div class="subject-header">
+            <span class="subject-name">Mechanics</span>
+            <span class="credit-badge">3 Credits</span>
+          </div>
+          <div class="input-group">
+            <div class="input-wrapper">
+              <label>Mid Sem (30)</label>
+              <input type="number" min="0" max="30" id="even-mechanics-mid" oninput="calculateSubjectGrade('even', 'mechanics')">
+            </div>
+            <div class="input-wrapper">
+              <label>End Sem (50)</label>
+              <input type="number" min="0" max="50" id="even-mechanics-end" oninput="calculateSubjectGrade('even', 'mechanics')">
+            </div>
+            <div class="input-wrapper">
+              <label>INTERNAL (20)</label>
+              <input type="number" min="0" max="20" id="even-mechanics-ta" oninput="calculateSubjectGrade('even', 'mechanics')">
+            </div>
+          </div>
+          <div class="grade-display" id="even-mechanics-grade">Grade: <span class="grade-value">-</span></div>
+        </div>
+
+        <div class="subject-block">
+          <div class="subject-header">
+            <span class="subject-name">Universal Human Values (UHV)</span>
+            <span class="credit-badge">2 Credits</span>
+          </div>
+          <div class="input-group">
+            <div class="input-wrapper">
+              <label>Mid Sem (30)</label>
+              <input type="number" min="0" max="30" id="even-uhv-mid" oninput="calculateSubjectGrade('even', 'uhv')">
+            </div>
+            <div class="input-wrapper">
+              <label>End Sem (50)</label>
+              <input type="number" min="0" max="50" id="even-uhv-end" oninput="calculateSubjectGrade('even', 'uhv')">
+            </div>
+            <div class="input-wrapper">
+              <label>INTERNAL (20)</label>
+              <input type="number" min="0" max="20" id="even-uhv-ta" oninput="calculateSubjectGrade('even', 'uhv')">
+            </div>
+          </div>
+          <div class="grade-display" id="even-uhv-grade">Grade: <span class="grade-value">-</span></div>
+        </div>
+
+        <div class="subject-block">
+          <div class="subject-header">
+            <span class="subject-name">Chemistry</span>
+            <span class="credit-badge">3 Credits</span>
+          </div>
+          <div class="input-group">
+            <div class="input-wrapper">
+              <label>Mid Sem (30)</label>
+              <input type="number" min="0" max="30" id="even-chem-mid" oninput="calculateSubjectGrade('even', 'chem')">
+            </div>
+            <div class="input-wrapper">
+              <label>End Sem (50)</label>
+              <input type="number" min="0" max="50" id="even-chem-end" oninput="calculateSubjectGrade('even', 'chem')">
+            </div>
+            <div class="input-wrapper">
+              <label>INTERNAL (20)</label>
+              <input type="number" min="0" max="20" id="even-chem-ta" oninput="calculateSubjectGrade('even', 'chem')">
+            </div>
+          </div>
+          <div class="grade-display" id="even-chem-grade">Grade: <span class="grade-value">-</span></div>
+        </div>
+
+        <div class="subject-block">
+          <div class="subject-header">
+            <span class="subject-name">Basic Electronics (BE)</span>
+            <span class="credit-badge">2 Credits</span>
+          </div>
+          <div class="input-group">
+            <div class="input-wrapper">
+              <label>Mid Sem (30)</label>
+              <input type="number" min="0" max="30" id="even-be-mid" oninput="calculateSubjectGrade('even', 'be')">
+            </div>
+            <div class="input-wrapper">
+              <label>End Sem (50)</label>
+              <input type="number" min="0" max="50" id="even-be-end" oninput="calculateSubjectGrade('even', 'be')">
+            </div>
+            <div class="input-wrapper">
+              <label>INTERNAL (20)</label>
+              <input type="number" min="0" max="20" id="even-be-ta" oninput="calculateSubjectGrade('even', 'be')">
+            </div>
+          </div>
+          <div class="grade-display" id="even-be-grade">Grade: <span class="grade-value">-</span></div>
+        </div>
+
+        <div class="subject-block">
+          <div class="subject-header">
+            <span class="subject-name">Basic Civil Engineering (BCE)</span>
+            <span class="credit-badge">2 Credits</span>
+          </div>
+          <div class="input-group">
+            <div class="input-wrapper">
+              <label>Mid Sem (30)</label>
+              <input type="number" min="0" max="30" id="even-bce-mid" oninput="calculateSubjectGrade('even', 'bce')">
+            </div>
+            <div class="input-wrapper">
+              <label>End Sem (50)</label>
+              <input type="number" min="0" max="50" id="even-bce-end" oninput="calculateSubjectGrade('even', 'bce')">
+            </div>
+            <div class="input-wrapper">
+              <label>INTERNAL (20)</label>
+              <input type="number" min="0" max="20" id="even-bce-ta" oninput="calculateSubjectGrade('even', 'bce')">
+            </div>
+          </div>
+          <div class="grade-display" id="even-bce-grade">Grade: <span class="grade-value">-</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2><i class="fas fa-flask"></i> Sessional Subjects</h2>
+
+        <div class="subject-block">
+          <div class="subject-header">
+            <span class="subject-name">Engineering Graphics & Design (EGD)</span>
+            <span class="credit-badge">1.5 Credits</span>
+          </div>
+          <div class="input-wrapper">
+            <label>Grade</label>
+            <select id="even-egd-grade" onchange="updateSessionalGrade('even', 'egd')">
+              <option value="" selected disabled>Select Grade</option>
+              <option value="10">0 (10)</option>
+              <option value="9">A+ (9)</option>
+              <option value="8">A (8)</option>
+              <option value="7">B+ (7)</option>
+              <option value="6">B (6)</option>
+              <option value="5">C (5)</option>
+              <option value="0">F (0)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="subject-block">
+          <div class="subject-header">
+            <span class="subject-name">Workshop & Manufacturing (WDM)</span>
+            <span class="credit-badge">1.5 Credits</span>
+          </div>
+          <div class="input-wrapper">
+            <label>Grade</label>
+            <select id="even-wdm-grade" onchange="updateSessionalGrade('even', 'wdm')">
+              <option value="" selected disabled>Select Grade</option>
+              <option value="10">0 (10)</option>
+              <option value="9">A+ (9)</option>
+              <option value="8">A (8)</option>
+              <option value="7">B+ (7)</option>
+              <option value="6">B (6)</option>
+              <option value="5">C (5)</option>
+              <option value="0">F (0)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="subject-block">
+          <div class="subject-header">
+            <span class="subject-name">Chemistry Lab</span>
+            <span class="credit-badge">1.5 Credits</span>
+          </div>
+          <div class="input-wrapper">
+            <label>Grade</label>
+            <select id="even-cheml-grade" onchange="updateSessionalGrade('even', 'cheml')">
+              <option value="" selected disabled>Select Grade</option>
+              <option value="10">0 (10)</option>
+              <option value="9">A+ (9)</option>
+              <option value="8">A (8)</option>
+              <option value="7">B+ (7)</option>
+              <option value="6">B (6)</option>
+              <option value="5">C (5)</option>
+              <option value="0">F (0)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="subject-block">
+          <div class="subject-header">
+            <span class="subject-name">Basic Electronics Lab</span>
+            <span class="credit-badge">1.5 Credits</span>
+          </div>
+          <div class="input-wrapper">
+            <label>Grade</label>
+            <select id="even-bel-grade" onchange="updateSessionalGrade('even', 'bel')">
+              <option value="" selected disabled>Select Grade</option>
+              <option value="10">O (10)</option>
+              <option value="9">A+ (9)</option>
+              <option value="8">A (8)</option>
+              <option value="7">B+ (7)</option>
+              <option value="6">B (6)</option>
+              <option value="5">C (5)</option>
+              <option value="0">F (0)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     
+
+
+    <div class="section hidden" id="odd-section">
+      <div class="card">
+        <h2><i class="fas fa-book"></i> Theory Subjects</h2>
+
+        <div class="subject-block">
+          <div class="subject-header">
+            <span class="subject-name">Physics</span>
+            <span class="credit-badge">3 Credits</span>
+          </div>
+          <div class="input-group">
+            <div class="input-wrapper">
+              <label>Mid Sem (30)</label>
+              <input type="number" min="0" max="30" id="odd-physics-mid" oninput="calculateSubjectGrade('odd', 'physics')">
+            </div>
+            <div class="input-wrapper">
+              <label>End Sem (50)</label>
+              <input type="number" min="0" max="50" id="odd-physics-end" oninput="calculateSubjectGrade('odd', 'physics')">
+            </div>
+            <div class="input-wrapper">
+              <label>INTERNAL (20)</label>
+              <input type="number" min="0" max="20" id="odd-physics-ta" oninput="calculateSubjectGrade('odd', 'physics')">
+            </div>
+          </div>
+          <div class="grade-display" id="odd-physics-grade">Grade: <span class="grade-value">-</span></div>
+        </div>
+
+        <div class="subject-block">
+          <div class="subject-header">
+            <span class="subject-name">Computing and Data Science (CDS)</span>
+            <span class="credit-badge">3 Credits</span>
+          </div>
+          <div class="input-group">
+            <div class="input-wrapper">
+              <label>Mid Sem (30)</label>
+              <input type="number" min="0" max="30" id="odd-cds-mid" oninput="calculateSubjectGrade('odd', 'cds')">
+            </div>
+            <div class="input-wrapper">
+              <label>End Sem (50)</label>
+              <input type="number" min="0" max="50" id="odd-cds-end" oninput="calculateSubjectGrade('odd', 'cds')">
+            </div>
+            <div class="input-wrapper">
+              <label>INTERNAL (20)</label>
+              <input type="number" min="0" max="20" id="odd-cds-ta" oninput="calculateSubjectGrade('odd', 'cds')">
+            </div>
+          </div>
+          <div class="grade-display" id="odd-cds-grade">Grade: <span class="grade-value">-</span></div>
+        </div>
+
+        <div class="subject-block">
+          <div class="subject-header">
+            <span class="subject-name">Engineering and Technical Writing (ETW)</span>
+            <span class="credit-badge">2 Credits</span>
+          </div>
+          <div class="input-group">
+            <div class="input-wrapper">
+              <label>Mid Sem (30)</label>
+              <input type="number" min="0" max="30" id="odd-etw-mid" oninput="calculateSubjectGrade('odd', 'etw')">
+            </div>
+            <div class="input-wrapper">
+              <label>End Sem (50)</label>
+              <input type="number" min="0" max="50" id="odd-etw-end" oninput="calculateSubjectGrade('odd', 'etw')">
+            </div>
+            <div class="input-wrapper">
+              <label>INTERNAL (20)</label>
+              <input type="number" min="0" max="20" id="odd-etw-ta" oninput="calculateSubjectGrade('odd', 'etw')">
+            </div>
+          </div>
+          <div class="grade-display" id="odd-etw-grade">Grade: <span class="grade-value">-</span></div>
+        </div>
+
+        <div class="subject-block">
+          <div class="subject-header">
+            <span class="subject-name">Basic Electrical Engineering (BEE)</span>
+            <span class="credit-badge">2 Credits</span>
+          </div>
+          <div class="input-group">
+            <div class="input-wrapper">
+              <label>Mid Sem (30)</label>
+              <input type="number" min="0" max="30" id="odd-bee-mid" oninput="calculateSubjectGrade('odd', 'bee')">
+            </div>
+            <div class="input-wrapper">
+              <label>End Sem (50)</label>
+              <input type="number" min="0" max="50" id="odd-bee-end" oninput="calculateSubjectGrade('odd', 'bee')">
+            </div>
+            <div class="input-wrapper">
+              <label>INTERNAL (20)</label>
+              <input type="number" min="0" max="20" id="odd-bee-ta" oninput="calculateSubjectGrade('odd', 'bee')">
+            </div>
+          </div>
+          <div class="grade-display" id="odd-bee-grade">Grade: <span class="grade-value">-</span></div>
+        </div>
+
+        <div class="subject-block">
+          <div class="subject-header">
+            <span class="subject-name">Mathematics II</span>
+            <span class="credit-badge">3 Credits</span>
+        </div>
+        <div class="input-group">
+          <div class="input-wrapper">
+            <label>Mid Sem (30)</label>
+            <input type="number" min="0" max="30" id="odd-math-mid" oninput="calculateSubjectGrade('odd', 'math')">
+          </div>
+          <div class="input-wrapper">
+            <label>End Sem (50)</label>
+            <input type="number" min="0" max="50" id="odd-math-end" oninput="calculateSubjectGrade('odd', 'math')">
+          </div>
+          <div class="input-wrapper">
+            <label>INTERNAL (20)</label>
+            <input type="number" min="0" max="20" id="odd-math-ta" oninput="calculateSubjectGrade('odd', 'math')">
+          </div>
+        </div>
+        <div class="grade-display" id="odd-math-grade">Grade: <span class="grade-value">-</span></div>
+      </div>
+      <div class="subject-block">
+        <div class="subject-header">
+          <span class="subject-name">bmp</span>
+          <span class="credit-badge">2 Credits</span>
+      </div>
+      <div class="input-group">
+        <div class="input-wrapper">
+          <label>Mid Sem (30)</label>
+          <input type="number" min="0" max="30" id="odd-bmp-mid" oninput="calculateSubjectGrade('odd', 'bmp')">
+        </div>
+        <div class="input-wrapper">
+          <label>End Sem (50)</label>
+          <input type="number" min="0" max="50" id="odd-bmp-end" oninput="calculateSubjectGrade('odd', 'bmp')">
+        </div>
+        <div class="input-wrapper">
+          <label>INTERNAL (20)</label>
+          <input type="number" min="0" max="20" id="odd-bmp-ta" oninput="calculateSubjectGrade('odd', 'bmp')">
+        </div>
+      </div>
+      <div class="grade-display" id="odd-bmp-grade">Grade: <span class="grade-value">-</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h2><i class="fas fa-flask"></i> Sessional Subjects</h2>
+
+    <div class="subject-block">
+      <div class="subject-header">
+        <span class="subject-name">Engineering Graphics & Design (EGD)</span>
+        <span class="credit-badge">1.5 Credits</span>
+      </div>
+      <div class="input-wrapper">
+        <label>Grade</label>
+        <select id="odd-egd-grade" onchange="updateSessionalGrade('odd', 'ETW')">
+          <option value="" selected disabled>Select Grade</option>
+          <option value="10">O (10)</option>
+          <option value="9">A+ (9)</option>
+          <option value="8">A (8)</option>
+          <option value="7">B+ (7)</option>
+          <option value="6">B  (6)</option>
+          <option value="5">C (5)</option>
+          <option value="0">F (0)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="subject-block">
+      <div class="subject-header">
+        <span class="subject-name">PHY</span>
+        <span class="credit-badge">1.5 Credits</span>
+      </div>
+      <div class="input-wrapper">
+        <label>Grade</label>
+        <select id="odd-phy-grade" onchange="updateSessionalGrade('odd', 'phy')">
+          <option value="" selected disabled>Select Grade</option>
+          <option value="10">O (10)</option>
+          <option value="9">A+ (9)</option>
+          <option value="8">A (8)</option>
+          <option value="7">B+ (7)</option>
+          <option value="6"> B (6)</option>
+          <option value="5">C (5)</option>
+          <option value="0">F (0)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="subject-block">
+      <div class="subject-header">
+        <span class="subject-name">electricalLab</span>
+        <span class="credit-badge">1.5 Credits</span>
+      </div>
+      <div class="input-wrapper">
+        <label>Grade</label>
+        <select id="odd-electl-grade" onchange="updateSessionalGrade('odd', 'electl')">
+          <option value="" selected disabled>Select Grade</option>
+          <option value="10">O (10)</option>
+          <option value="9">A+ (9)</option>
+          <option value="8">A (8)</option>
+          <option value="7">B+ (7)</option>
+          <option value="6">B (6)</option>
+          <option value="5">C (5)</option>
+          <option value="0">F (0)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="subject-block">
+      <div class="subject-header">
+        <span class="subject-name">cds Lab</span>
+        <span class="credit-badge">1.5 Credits</span>
+      </div>
+      <div class="input-wrapper">
+        <label>Grade</label>
+        <select id="odd-cdsl-grade" onchange="updateSessionalGrade('odd', 'cdsl')">
+          <option value="" selected disabled>Select Grade</option>
+          <option value="10">O (10)</option>
+          <option value="9">A+ (9)</option>
+          <option value="8">A (8)</option>
+          <option value="7">B+(7)</option>
+          <option value="6">B (6)</option>
+          <option value="5">C (5)</option>
+          <option value="0">F (0)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+ 
+
+</div>
+
+<script>
+const subjectCredits = {
+  
+  even: {
+    math: 3,
+    mechanics: 3,
+    uhv: 2,
+    chem: 3,
+    be: 2,
+    bce: 2,
+   
+    egd: 1.5,
+    wdm: 1.5,
+    cheml: 1.5,
+    bel: 1.5
+  },
+  odd: {
+    physics: 3,
+    cds: 3,
+    etw: 2,
+    bee: 2,
+    math: 3,
+    bmp: 2,
+   
+    egd: 1.5,
+    phy: 1.5,
+    electl: 1.5,
+    cdsl: 1.5
+  }
+};
+
+
+const grades = {
+  even: {},
+  odd: {}
+};
+
+
+function showSemester(semester) {
+  const evenSection = document.getElementById('even-section');
+  const oddSection = document.getElementById('odd-section');
+  const toggleSwitch = document.getElementById('toggle-switch');
+  const evenBtn = document.getElementById('even-btn');
+  const oddBtn = document.getElementById('odd-btn');
+  
+  if (semester === 'even') {
+    evenSection.classList.remove('hidden');
+    oddSection.classList.add('hidden');
+    toggleSwitch.classList.remove('odd');
+    evenBtn.classList.add('active');
+    oddBtn.classList.remove('active');
+  } else {
+    evenSection.classList.add('hidden');
+    oddSection.classList.remove('hidden');
+    toggleSwitch.classList.add('odd');
+    evenBtn.classList.remove('active');
+    oddBtn.classList.add('active');
+  }
+  
+  const resultContainer = document.querySelector('.result-container');
+  if (resultContainer) {
+    resultContainer.classList.remove('show');
+  }
+}
+
+function calculateSubjectGrade(semester, subject) {
+  const midMarks = parseFloat(document.getElementById(`${semester}-${subject}-mid`).value) || 0;
+  const endMarks = parseFloat(document.getElementById(`${semester}-${subject}-end`).value) || 0;
+  const taMarks = parseFloat(document.getElementById(`${semester}-${subject}-ta`).value) || 0;
+  
+  const totalMarks = midMarks + endMarks + taMarks;
+  let grade = '';
+  let gradePoint = 0;
+  
+  if (totalMarks >= 90) {
+    grade = 'O (10)';
+    gradePoint = 10;
+  } else if (totalMarks >= 80) {
+    grade = 'A+ (9)';
+    gradePoint = 9;
+  } else if (totalMarks >= 70) {
+    grade = 'A (8)';
+    gradePoint = 8;
+  } else if (totalMarks >= 60) {
+    grade = 'B+ (7)';
+    gradePoint = 7;
+  } else if (totalMarks >= 50) {
+    grade = 'B (6)';
+    gradePoint = 6;
+  } else if (totalMarks >= 40) {
+    grade = 'C (5)';
+    gradePoint = 5;
+  } else {
+    grade = 'F (0)';
+    gradePoint = 0;
+  }
+  
+
+  const gradeElement = document.getElementById(`${semester}-${subject}-grade`);
+  if (gradeElement) {
+    gradeElement.innerHTML = `Grade: <span class="grade-value">${grade}</span>`;
+  }
+  
+
+  grades[semester][subject] = gradePoint;
+}
+
+
+function updateSessionalGrade(semester, subject) {
+  const gradeSelect = document.getElementById(`${semester}-${subject}-grade`);
+  if (gradeSelect) {
+    const gradePoint = parseFloat(gradeSelect.value) || 0;
+    grades[semester][subject] = gradePoint;
+  }
+}
+
+function calculateCGPA() {
+  const activeSemester = document.getElementById('odd-section').classList.contains('hidden') ? 'even' : 'odd';
+  const credits = subjectCredits[activeSemester];
+  let totalCreditPoints = 0;
+  let totalCredits = 0;
+  let subjectResults = [];
+ 
+  for (const subject in credits) {
+    if (grades[activeSemester][subject] !== undefined) {
+      const subjectCredit = credits[subject];
+      const gradePoint = grades[activeSemester][subject];
+      const creditPoint = subjectCredit * gradePoint;
+      
+      totalCreditPoints += creditPoint;
+      totalCredits += subjectCredit;
+      
+      subjectResults.push({
+        subject: subject,
+        credit: subjectCredit,
+        grade: gradePoint,
+        creditPoint: creditPoint
+      });
+    }
+  }
+  
+
+  const cgpa = totalCredits > 0 ? (totalCreditPoints / totalCredits).toFixed(2) : 0;
+ 
+  showResult(cgpa, subjectResults, activeSemester);
+}
+
+
+function showResult(cgpa, subjectResults, semester) {
+
+  const existingResult = document.querySelector('.result-container');
+  if (existingResult) {
+    existingResult.remove();
+  }
+  
+
+  const resultContainer = document.createElement('div');
+  resultContainer.className = 'result-container';
+  resultContainer.innerHTML = `
+    <h2 class="result-title">${semester.charAt(0).toUpperCase() + semester.slice(1)} Semester CGPA Result</h2>
+    <div class="cgpa-display">${cgpa}</div>
+    <div class="grade-summary">
+      ${subjectResults.map(item => `
+        <div class="grade-item">
+          <div class="subject">${getSubjectFullName(semester, item.subject)}</div>
+          <div class="points">${item.grade} × ${item.credit}</div>
+        </div>
+      `).join('')}
+    
+  `;
+  
+
+  document.querySelector('.container').appendChild(resultContainer);
+  
+
+  setTimeout(() => {
+    resultContainer.classList.add('show');
+  }, 100);
+}
+
+function getSubjectFullName(semester, code) {
+  const subjectNames = {
+    even: {
+      math: 'Mathematics II',
+      mechanics: 'Mechanics',
+      uhv: 'Universal Human Values',
+      chem: 'Chemistry',
+      be: 'Basic Electronics',
+      bce: 'Basic Civil Engineering',
+      egd: 'Engineering Graphics & Design',
+      wdm: 'Workshop & Manufacturing',
+      cheml: 'Chemistry Lab',
+      bel: 'Basic Electronics Lab'
+    },
+    odd: {
+      physics: 'Physics',
+      cds: 'Computing and Data Science',
+      etw: 'Engineering and Technical Writing',
+      bee: 'Basic Electrical Engineering',
+      math: 'Mathematics I',
+      bmp: 'Basic Manufacturing Processes',
+      egd: 'Engineering Graphics & Design',
+      phy: 'Physics Lab',
+      electl: 'Electrical Lab',
+      cdsl: 'CDS Lab'
+    }
+  };
+  
+  return subjectNames[semester][code] || code.toUpperCase();
+}
+
+
+function resetForm() {
+  const activeSemester = document.getElementById('odd-section').classList.contains('hidden') ? 'even' : 'odd';
+  const inputs = document.querySelectorAll(`#${activeSemester}-section input`);
+  const selects = document.querySelectorAll(`#${activeSemester}-section select`);
+  const gradeDisplays = document.querySelectorAll(`#${activeSemester}-section .grade-display .grade-value`);
+
+  inputs.forEach(input => {
+    input.value = '';
+  });
+  
+  selects.forEach(select => {
+    select.selectedIndex = 0;
+  });
+  
+  gradeDisplays.forEach(display => {
+    display.textContent = '-';
+  });
+  
+  grades[activeSemester] = {};
+  
+  
+  const resultContainer = document.querySelector('.result-container');
+  if (resultContainer) {
+    resultContainer.classList.remove('show');
+  }
+}
+
+
+function toggleTheme() {
+  const body = document.body;
+  const themeIcon = document.querySelector('.theme-toggle i');
+  
+  body.classList.toggle('dark-theme');
+  
+  if (body.classList.contains('dark-theme')) {
+    themeIcon.className = 'fas fa-sun';
+  } else {
+    themeIcon.className = 'fas fa-moon';
+  }
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  if (!document.querySelector('.button-container')) {
+    const buttonContainer = document.createElement('div');
+    buttonContainer.className = 'button-container';
+    buttonContainer.innerHTML = `
+      <button class="btn btn-secondary" onclick="resetForm()">Reset</button>
+      <button class="btn btn-primary" onclick="calculateCGPA()">Calculate CGPA</button>
+    `;
+    
+    document.querySelector('.container').appendChild(buttonContainer);
+  }
+  
+
+  showSemester('even');
+});
+
+</script>
+  </div>
+  <footer>
+    <div class="footer-text">@Made by GouravKJ with ❤️</div>
+    <ul class="social-links">
+      <li>
+        <a href="https://www.linkedin.com/in/gourav-kumar-jaiswal-b8b55a33b" class="social-icon" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/gouravKJ" class="social-icon" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+    </ul>
+  </footer>
+  
+</body>
+</html>
