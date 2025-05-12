@@ -41,8 +41,8 @@ This tool is built for **VSSUT B.Tech students** who want a simple yet powerful 
 
 ## 🚀 Try it now!
 
+#link -- https://vssut-cgpa-predict.vercel.app/
+
 Save time, avoid manual calculation errors, and keep track of your academic progress in style with the **VSSUT CGPA Predictor**.
 
----
 
-Would you like a matching banner image or logo for the README as well?
